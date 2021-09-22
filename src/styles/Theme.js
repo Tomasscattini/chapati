@@ -16,10 +16,10 @@ const Theme = ({ children }) => {
             secondary: " 'Neuton', serif"
         },
         device: {
-            lgPhone: '(min-width: 426px)',
-            tablet: '(min-width: 769px)',
-            laptop: '(min-width: 1025px)',
-            desktop: '(min-width: 1200px)'
+            lgPhone: '@media (min-width: 426px)',
+            tablet: '@media (min-width: 769px)',
+            laptop: '@media (min-width: 1025px)',
+            desktop: '@media (min-width: 1200px)'
         }
     };
 

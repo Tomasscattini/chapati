@@ -2,7 +2,7 @@ import { StyledHeader } from '../styles/Header';
 
 function Header() {
     return (
-        <StyledHeader>
+        <StyledHeader className="section">
             <div className="main-image">
                 <img className="blue-bg" src="images/blue-vector.png" alt="Blue background" />
                 <img className="branches" src="images/main-header.png" alt="Main" />

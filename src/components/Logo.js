@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { HashLink } from 'react-router-hash-link';
 
 const StyledLogo = styled.div`
     position: fixed;
@@ -16,7 +17,9 @@ const StyledLogo = styled.div`
 function Logo({ color }) {
     return (
         <StyledLogo>
-            <img className="brand" src="images/logochapati.svg" alt="Brand" />
+            <HashLink to="#top">
+                <img className="brand" src="images/logochapati.svg" alt="Brand" />
+            </HashLink>
         </StyledLogo>
     );
 }
