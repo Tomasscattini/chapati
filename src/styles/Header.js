@@ -8,7 +8,7 @@ export const StyledHeader = styled.header`
     padding: 10vh 0 0 0;
     box-sizing: border-box;
     background-color: ${({ theme }) => theme.color.green};
-    ${({ theme }) => theme.device.tablet} {
+    ${({ theme }) => theme.device.lgPhone} {
         flex-direction: row;
         justify-content: center;
     }
@@ -20,16 +20,19 @@ export const StyledHeader = styled.header`
         max-width: 75%;
         margin: 20vh 0 10vh 0;
         height: auto;
-        ${({ theme }) => theme.device.tablet} {
+        ${({ theme }) => theme.device.lgPhone} {
             width: 35%;
-            margin-top: 0;
+            margin-top: 5vh;
+        }
+        ${({ theme }) => theme.device.laptop} {
+            margin-top: 10vh;
         }
         .blue-bg {
             position: absolute;
             width: 100%;
             z-index: 8;
             transform: translate(-5%, -5%);
-            ${({ theme }) => theme.device.tablet} {
+            ${({ theme }) => theme.device.lgPhone} {
                 height: auto;
                 width: 100%;
             }
@@ -38,7 +41,7 @@ export const StyledHeader = styled.header`
             position: relative;
             width: 80%;
             z-index: 9;
-            ${({ theme }) => theme.device.tablet} {
+            ${({ theme }) => theme.device.lgPhone} {
                 height: auto;
                 width: 80%;
             }
@@ -47,7 +50,7 @@ export const StyledHeader = styled.header`
     .content {
         margin: 0 5vw;
         transform: translate(10vw, -5vh);
-        ${({ theme }) => theme.device.tablet} {
+        ${({ theme }) => theme.device.lgPhone} {
             transform: translate(-5vw, -5vh);
         }
         .name {

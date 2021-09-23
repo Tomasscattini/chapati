@@ -1,3 +1,4 @@
+import { forwardRef } from 'react';
 import styled from 'styled-components';
 import { HashLink } from 'react-router-hash-link';
 
@@ -44,14 +45,14 @@ const menuItems = [
         link: '#project'
     },
     {
-        name: 'contact',
+        name: 'contacto',
         link: '#contact'
     }
 ];
 
-function Menu() {
+const Menu = forwardRef((props, ref) => {
     return (
-        <StyledMenu>
+        <StyledMenu {...props} ref={ref}>
             <ul className="list">
                 {menuItems.map((item, index) => (
                     <HashLink className="anchor-link" key={item.link + index} to={item.link}>
@@ -61,6 +62,6 @@ function Menu() {
             </ul>
         </StyledMenu>
     );
-}
+});
 
 export default Menu;

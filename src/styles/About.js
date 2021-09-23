@@ -31,9 +31,13 @@ export const StyledAbout = styled.section`
             }
             .photo {
                 position: absolute;
+                left: calc(50vw - 100px);
+                top: 32vh;
                 max-width: 200px;
                 ${({ theme }) => theme.device.tablet} {
                     max-width: 400px;
+                    left: auto;
+                    top: auto;
                 }
                 &.photo1 {
                     transform: translate(-30%, 15%);
@@ -75,5 +79,21 @@ export const StyledAbout = styled.section`
     }
 
     .about-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-width: 80%;
+        margin: 0 auto;
+        padding-bottom: 15vh;
+        ${({ theme }) => theme.device.laptop} {
+            max-width: 900px;
+        }
+        .paragraph {
+            font-size: 1.8rem;
+            ${({ theme }) => theme.device.laptop} {
+                font-size: 2.8rem;
+            }
+        }
     }
 `;
