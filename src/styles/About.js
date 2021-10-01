@@ -39,14 +39,6 @@ export const StyledAbout = styled.section`
                     left: auto;
                     top: auto;
                 }
-                &.photo1 {
-                    transform: translate(-30%, 15%);
-                }
-                &.photo2 {
-                    transform: translate(30%, 15%);
-                }
-                &.photo3 {
-                }
             }
         }
         .about-header-title {

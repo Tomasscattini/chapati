@@ -18,11 +18,33 @@ const StyledMenu = styled.nav`
             color: ${({ theme }) => theme.color.blue};
             text-decoration: none;
             .list-item {
+                position: relative;
                 list-style: none;
                 margin: 5px 0;
                 padding: 0;
                 font-size: 1.1rem;
                 transition: all 0.3s ease;
+                &.current::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: -20%;
+                    height: 50%;
+                    width: 140%;
+                    border-bottom: 2px solid ${({ theme }) => theme.color.darkOrange};
+                    animation: 0.2s 1 linear grow;
+                }
+                &.current {
+                    &.project {
+                        color: white;
+                        &::after {
+                            border-color: ${({ theme }) => theme.color.blue};
+                        }
+                    }
+                    &.contact {
+                        color: ${({ theme }) => theme.color.darkOrange};
+                    }
+                }
                 &:hover {
                     transform: scale(1.15);
                 }
@@ -31,6 +53,14 @@ const StyledMenu = styled.nav`
                     margin: 10px 0;
                 }
             }
+        }
+    }
+    @keyframe grow {
+        from {
+            width: 0;
+        }
+        to {
+            width: 140%;
         }
     }
 `;
@@ -56,7 +86,7 @@ const Menu = forwardRef((props, ref) => {
             <ul className="list">
                 {menuItems.map((item, index) => (
                     <HashLink className="anchor-link" key={item.link + index} to={item.link}>
-                        <li className="list-item">{item.name}</li>
+                        <li className={`list-item ${item.link.split('#')[1]}`}>{item.name}</li>
                     </HashLink>
                 ))}
             </ul>

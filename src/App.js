@@ -32,17 +32,19 @@ function App() {
     useLayoutEffect(() => {
         const element = '#menu .anchor-link';
         const options = (color, section) => ({
-            duration: 0.3,
-            color,
-            scrollTrigger: {
-                trigger: section,
-                start: 'top center-=200',
-                toggleActions: 'play none none reverse'
-            }
+            trigger: section,
+            start: 'top center-=200',
+            toggleActions: 'play none none reverse',
+            toggleClass: {
+                targets: `${element} .${section.split('#')[1]}`,
+                className: 'current'
+            },
+            onEnter: () => gsap.fromTo(element, { color: color === '#ffffff' ? '#0D3866' : '#ffffff' }, { color })
         });
-        gsap.to(element, options('#ffffff', '#about'));
-        gsap.to(element, options('#0D3866', '#project'));
-        gsap.to(element, options('#ffffff', '#contact'));
+        ScrollTrigger.create(options('#ffffff', '#about'));
+        ScrollTrigger.create(options('#ffffff', '#gallery'));
+        ScrollTrigger.create(options('#0D3866', '#project'));
+        ScrollTrigger.create(options('#ffffff', '#contact'));
     }, []);
 
     return (
@@ -53,7 +55,7 @@ function App() {
                 <Menu id="menu" ref={menuRef} />
                 <ArrowDown />
                 <Header />
-                <About id="about" />
+                <About gsap={gsap} scrollTrigger={ScrollTrigger} id="about" />
                 <Gallery id="gallery" />
                 <Project id="project" />
                 <Contact id="contact" />

@@ -29,6 +29,11 @@ export const StyledContact = styled.section`
         padding-bottom: 5px;
         border-bottom: 1px solid white;
         transform: translateY(-80%);
+        transition: all 0.3s ease;
+        &:hover {
+            color: ${({ theme }) => theme.color.darkOrange};
+            border-color: ${({ theme }) => theme.color.darkOrange};
+        }
         ${({ theme }) => theme.device.tablet} {
             font-size: 3.5rem;
         }
