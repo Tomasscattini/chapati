@@ -1,7 +1,11 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 
-const Theme = ({ children }) => {
+interface Props {
+    children?: any;
+}
+
+const Theme: React.FC<Props> = ({ children }) => {
     const theme = {
         color: {
             blue: '#0D3866',

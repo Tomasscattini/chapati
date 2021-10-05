@@ -29,7 +29,11 @@ const pictures = [
     }
 ];
 
-const Gallery = (props) => {
+interface Props {
+    id?: string;
+}
+
+const Gallery: React.FC<Props> = (props) => {
     return (
         <StyledGallery {...props} className="section">
             <div className="gallery-wrapper">

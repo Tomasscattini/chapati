@@ -1,8 +1,13 @@
+import React from 'react';
 import { StyledHeader } from '../styles/Header';
 
-function Header() {
+interface Props {
+    id?: string;
+}
+
+const Header: React.FC<Props> = (props) => {
     return (
-        <StyledHeader className="section">
+        <StyledHeader {...props} className="section">
             <div className="main-image">
                 <img className="blue-bg" src="images/blue-vector.png" alt="Blue background" />
                 <img className="branches" src="images/main-header.png" alt="Main" />
@@ -17,6 +22,6 @@ function Header() {
             </div>
         </StyledHeader>
     );
-}
+};
 
 export default Header;

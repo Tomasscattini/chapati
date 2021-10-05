@@ -1,7 +1,11 @@
 import React from 'react';
 import { StyledProject } from '../styles/Project';
 
-const Project = (props) => {
+interface Props {
+    id?: string;
+}
+
+const Project: React.FC<Props> = (props) => {
     return (
         <StyledProject {...props} className="section">
             <div className="content-wrapper">

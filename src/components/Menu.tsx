@@ -1,4 +1,4 @@
-import { forwardRef } from 'react';
+import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 import { HashLink } from 'react-router-hash-link';
 
@@ -24,26 +24,17 @@ const StyledMenu = styled.nav`
                 padding: 0;
                 font-size: 1.1rem;
                 transition: all 0.3s ease;
-                &.current::after {
+                &::after {
                     content: '';
                     position: absolute;
+                    visibility: hidden;
                     top: 0;
                     left: -20%;
                     height: 50%;
-                    width: 140%;
+                    width: 10%;
                     border-bottom: 2px solid ${({ theme }) => theme.color.darkOrange};
-                    animation: 0.2s 1 linear grow;
-                }
-                &.current {
-                    &.project {
-                        color: white;
-                        &::after {
-                            border-color: ${({ theme }) => theme.color.blue};
-                        }
-                    }
-                    &.contact {
-                        color: ${({ theme }) => theme.color.darkOrange};
-                    }
+                    transform-origin: left center;
+                    transition: all 0.6s ease;
                 }
                 &:hover {
                     transform: scale(1.15);
@@ -54,13 +45,40 @@ const StyledMenu = styled.nav`
                 }
             }
         }
-    }
-    @keyframe grow {
-        from {
-            width: 0;
+        &.about .anchor-link {
+            color: white;
+            .about::after {
+                visibility: visible;
+                width: 140%;
+                border-color: ${({ theme }) => theme.color.darkOrange};
+            }
         }
-        to {
-            width: 140%;
+        &.gallery .anchor-link {
+            color: white;
+        }
+        &.project .anchor-link {
+            color: ${({ theme }) => theme.color.blue};
+            .project {
+                color: white;
+                &::after {
+                    visibility: visible;
+                    width: 140%;
+                    border-color: ${({ theme }) => theme.color.blue};
+                }
+            }
+        }
+        &.contact .anchor-link {
+            color: white;
+            .project::after {
+                visibility: hidden;
+            }
+            .contact {
+                color: ${({ theme }) => theme.color.darkOrange};
+                &::after {
+                    visibility: visible;
+                    width: 140%;
+                }
+            }
         }
     }
 `;
@@ -68,25 +86,32 @@ const StyledMenu = styled.nav`
 const menuItems = [
     {
         name: 'about',
-        link: '#about'
+        link: '#about',
+        className: 'about'
     },
     {
         name: 'el proyecto',
-        link: '#project'
+        link: '#project',
+        className: 'project'
     },
     {
         name: 'contacto',
-        link: '#contact'
+        link: '#contact',
+        className: 'contact'
     }
 ];
 
-const Menu = forwardRef((props, ref) => {
+interface Props {
+    id?: string;
+}
+
+const Menu = forwardRef<HTMLDivElement, Props>(({ id }, ref) => {
     return (
-        <StyledMenu {...props} ref={ref}>
+        <StyledMenu id={id} ref={ref}>
             <ul className="list">
                 {menuItems.map((item, index) => (
                     <HashLink className="anchor-link" key={item.link + index} to={item.link}>
-                        <li className={`list-item ${item.link.split('#')[1]}`}>{item.name}</li>
+                        <li className={`list-item ${item.className}`}>{item.name}</li>
                     </HashLink>
                 ))}
             </ul>

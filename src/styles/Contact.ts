@@ -8,6 +8,7 @@ export const StyledContact = styled.section`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    transform: translateY(-2px);
     a {
         color: inherit;
         text-decoration: none;
@@ -61,6 +62,19 @@ export const StyledContact = styled.section`
                     }
                 }
             }
+        }
+    }
+    .credits {
+        position: absolute;
+        z-index: 9999;
+        bottom: 2vh;
+        left: 5vw;
+        color: white;
+        ${({ theme }) => theme.device.tablet} {
+            bottom: 5vh;
+        }
+        a {
+            font-style: italic;
         }
     }
 `;

@@ -34,6 +34,7 @@ export const StyledAbout = styled.section`
                 left: calc(50vw - 100px);
                 top: 32vh;
                 max-width: 200px;
+                transition: all 0.3s ease;
                 ${({ theme }) => theme.device.tablet} {
                     max-width: 400px;
                     left: auto;

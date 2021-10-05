@@ -7,7 +7,11 @@ const socialMedia = [
     { name: 'whatsapp', url: '+541198787845', type: 'tel', className: 'tel' }
 ];
 
-const Contact = (props) => {
+interface Props {
+    id?: string;
+}
+
+const Contact: React.FC<Props> = (props) => {
     return (
         <StyledContact {...props} className="section">
             <h4 className="question">alguna pregunta?</h4>
@@ -29,6 +33,14 @@ const Contact = (props) => {
                         </li>
                     ))}
                 </ul>
+            </div>
+
+            <div className="credits">
+                Creado con 🤍 por{' '}
+                <a target="_blank" rel="noreferrer" href="https://itakhidigital.com/">
+                    Itakhi
+                </a>
+                &nbsp;2021
             </div>
         </StyledContact>
     );

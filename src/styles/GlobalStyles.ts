@@ -4,7 +4,7 @@ const GlobalStyles = createGlobalStyle`
     html, body {
         margin: 0;
         padding: 0;
-        font-family: ${({ theme }) => theme.fonts.primary};
+        font-family: 'Chivo', sans-serif;
     }
     html {
         scroll-behavior: smooth;
@@ -29,7 +29,7 @@ const GlobalStyles = createGlobalStyle`
 
     .btn {
         color: white;
-        background-color: ${({ theme }) => theme.color.green};
+        background-color: #7BA78F;
         border-radius: 9999px;
         padding: 10px 30px;
         transition: all .3s ease;
