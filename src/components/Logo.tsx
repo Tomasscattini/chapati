@@ -10,8 +10,9 @@ const StyledLogo = styled.div`
     z-index: 99;
     width: 100vw;
     height: 60px;
+    margin-top: 5vh;
     .brand {
-        width: 120px;
+        width: 200px;
     }
 `;
 
@@ -23,11 +24,7 @@ const Logo: React.FC<Props> = ({ blue }) => {
     return (
         <StyledLogo>
             <HashLink to="#top">
-                <img
-                    className="brand"
-                    src={blue ? 'images/logochapati.png' : 'images/logochapati-white.png'}
-                    alt="Brand"
-                />
+                <img className="brand" src={blue ? 'images/logob.png' : 'images/logow.png'} alt="Brand" />
             </HashLink>
         </StyledLogo>
     );

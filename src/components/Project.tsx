@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledProject } from '../styles/Project';
+import { StyledProject } from 'styles/Project';
 
 interface Props {
     id?: string;

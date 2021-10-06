@@ -46,6 +46,9 @@ const ArrowDown: React.FC<Props> = ({ currentSection = 'default' }) => {
             nextSection = '#project';
             break;
         case 'project':
+            nextSection = '#what-we-like';
+            break;
+        case 'what-we-like':
             nextSection = '#contact';
             break;
         case 'contact':

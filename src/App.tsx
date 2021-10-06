@@ -23,6 +23,7 @@ import Header from 'components/Header';
 import About from 'components/About';
 import Gallery from 'components/Gallery';
 import Project from 'components/Project';
+import WhatWeLike from 'components/WhatWeLike';
 import Contact from 'components/Contact';
 
 const App: React.FC = () => {
@@ -58,6 +59,7 @@ const App: React.FC = () => {
         ScrollTrigger.create(options('#about'));
         ScrollTrigger.create(options('#gallery'));
         ScrollTrigger.create(options('#project'));
+        ScrollTrigger.create(options('#what-we-like'));
         ScrollTrigger.create(options('#separator'));
         ScrollTrigger.create(options('#contact'));
     }, []);
@@ -73,6 +75,7 @@ const App: React.FC = () => {
                 <About gsap={gsap} scrollTrigger={ScrollTrigger} id="about" />
                 <Gallery id="gallery" />
                 <Project id="project" />
+                <WhatWeLike id="what-we-like" />
                 <hr
                     style={{
                         position: 'relative',

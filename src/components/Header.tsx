@@ -9,7 +9,7 @@ const Header: React.FC<Props> = (props) => {
     return (
         <StyledHeader {...props} className="section">
             <div className="main-image">
-                <img className="blue-bg" src="images/blue-vector.png" alt="Blue background" />
+                <img className="blue-bg" src="images/vectorb.svg" alt="Blue background" />
                 <img className="branches" src="images/main-header.png" alt="Main" />
             </div>
             <div className="content">

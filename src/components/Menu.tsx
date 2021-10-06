@@ -56,7 +56,8 @@ const StyledMenu = styled.nav`
         &.gallery .anchor-link {
             color: white;
         }
-        &.project .anchor-link {
+        &.project .anchor-link,
+        &.what-we-like .anchor-link {
             color: ${({ theme }) => theme.color.blue};
             .project {
                 color: white;
@@ -85,12 +86,12 @@ const StyledMenu = styled.nav`
 
 const menuItems = [
     {
-        name: 'about',
+        name: 'el proyecto',
         link: '#about',
         className: 'about'
     },
     {
-        name: 'el proyecto',
+        name: 'lo que hacemos',
         link: '#project',
         className: 'project'
     },

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledContact = styled.section`
+export const StyledContact = styled.footer`
     background-color: ${({ theme }) => theme.color.darkGreen};
     color: ${({ theme }) => theme.color.darkOrange};
     position: relative;
@@ -64,17 +64,30 @@ export const StyledContact = styled.section`
             }
         }
     }
-    .credits {
+    .credits,
+    .photography-credits {
         position: absolute;
         z-index: 9999;
-        bottom: 2vh;
-        left: 5vw;
+        bottom: 5vh;
+        width: 100%;
+        text-align: center;
         color: white;
+        line-height: 1.4;
+        font-size: 0.8rem;
         ${({ theme }) => theme.device.tablet} {
-            bottom: 5vh;
+            width: auto;
+            left: 5vw;
+            bottom: 2vh;
         }
         a {
             font-style: italic;
+        }
+    }
+    .photography-credits {
+        bottom: 2vh;
+        ${({ theme }) => theme.device.tablet} {
+            left: auto;
+            right: 5vw;
         }
     }
 `;

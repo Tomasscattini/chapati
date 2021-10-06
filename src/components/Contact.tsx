@@ -3,8 +3,8 @@ import { StyledContact } from '../styles/Contact';
 
 const email = 'chapati.delta@gmail.com';
 const socialMedia = [
-    { name: 'instagram', url: 'https://www.instagram.com/chapatidelta', className: 'instagram' },
-    { name: 'whatsapp', url: '+541198787845', type: 'tel', className: 'tel' }
+    { name: 'instagram', url: 'https://www.instagram.com/chapati.delta/', className: 'instagram' },
+    { name: 'whatsapp', url: '+16466374077', type: 'tel', className: 'tel' }
 ];
 
 interface Props {
@@ -42,6 +42,8 @@ const Contact: React.FC<Props> = (props) => {
                 </a>
                 &nbsp;2021
             </div>
+
+            <div className="photography-credits">📸 Las fotos fueron tomadas por China Romero y Guido Paulise</div>
         </StyledContact>
     );
 };

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledAbout = styled.section`
+export const StyledAbout = styled.main`
     background-color: ${({ theme }) => theme.color.blue};
     color: ${({ theme }) => theme.color.green};
     .about-header,

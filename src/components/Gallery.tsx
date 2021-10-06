@@ -1,32 +1,24 @@
 import React from 'react';
 import { StyledGallery } from '../styles/Gallery';
 
+const createImg = (num: number) => ({
+    src: `images/gallery${num}.jpeg`,
+    alt: `Photo ${num}`,
+    className: `photo${num}`
+});
+
 const pictures = [
-    {
-        src: 'images/gallery1.png',
-        alt: 'Photo 1',
-        className: 'photo1'
-    },
-    {
-        src: 'images/gallery2.png',
-        alt: 'Photo 2',
-        className: 'photo2'
-    },
-    {
-        src: 'images/gallery3.png',
-        alt: 'Photo 3',
-        className: 'photo3'
-    },
-    {
-        src: 'images/gallery5.jpg',
-        alt: 'Photo 4',
-        className: 'photo4'
-    },
-    {
-        src: 'images/gallery6.jpg',
-        alt: 'Photo 5',
-        className: 'photo5'
-    }
+    createImg(1),
+    createImg(2),
+    createImg(3),
+    createImg(4),
+    createImg(5),
+    createImg(6),
+    createImg(7),
+    createImg(8),
+    createImg(9),
+    createImg(10),
+    createImg(11)
 ];
 
 interface Props {
