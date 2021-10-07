@@ -16,7 +16,6 @@ const pictures = [
     createImg(6),
     createImg(7),
     createImg(8, '.png'),
-    createImg(9, '.png'),
     createImg(10, '.jpg'),
     createImg(11, '.jpg')
 ];

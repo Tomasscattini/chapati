@@ -11,6 +11,9 @@ export const StyledGallery = styled.section`
         bottom: 20vh;
         display: flex;
         animation: scroll 40s linear infinite;
+        &:hover {
+            animation-play-state: paused;
+        }
         .photo {
             margin: 0 15px;
             height: 100%;
@@ -25,7 +28,7 @@ export const StyledGallery = styled.section`
             transform: translateX(0);
         }
         100% {
-            transform: translateX(calc(-442px * 11));
+            transform: translateX(calc(-442px * 10));
         }
     }
 `;
