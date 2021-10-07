@@ -63,9 +63,9 @@ export const StyledWhatWeLike = styled.section`
         .details {
             position: absolute;
             opacity: 0;
-            top: -20vh;
-            left: 25vw;
-            width: 65vw;
+            top: -25vh;
+            left: 5vw;
+            width: 85vw;
             transform: scale(0.01);
             transform-origin: center center;
             transition: all 0.3s ease;
@@ -76,6 +76,8 @@ export const StyledWhatWeLike = styled.section`
             }
             ${({ theme }) => theme.device.tablet} {
                 top: -30vh;
+                left: 25vw;
+                width: 65vw;
             }
             ${({ theme }) => theme.device.laptop} {
                 top: -50vh;
@@ -89,16 +91,18 @@ export const StyledWhatWeLike = styled.section`
                 position: absolute;
                 top: 22%;
                 left: 31%;
-                width: 65%;
+                width: 60%;
                 color: white;
-                font-size: 0.6rem;
+                font-size: 0.8rem;
                 ${({ theme }) => theme.device.lgPhone} {
-                    font-size: 0.8rem;
+                    font-size: 1rem;
+                    top: 50%;
                 }
                 ${({ theme }) => theme.device.tablet} {
                     font-size: 1.3rem;
                     left: 23%;
                     top: 55%;
+                    width: 65%;
                 }
                 ${({ theme }) => theme.device.laptop} {
                     font-size: 1.8rem;
@@ -111,8 +115,12 @@ export const StyledWhatWeLike = styled.section`
                     top: 45%;
                 }
                 &.huerta-content {
-                    left: 25%;
+                    left: 28%;
                     top: 35%;
+                    ${({ theme }) => theme.device.lgPhone} {
+                        top: 25%;
+                        left: 34%;
+                    }
                     ${({ theme }) => theme.device.tablet} {
                         left: 30%;
                         top: 30%;
@@ -122,18 +130,20 @@ export const StyledWhatWeLike = styled.section`
                         top: 38%;
                     }
                     ${({ theme }) => theme.device.desktop} {
-                        top: 58%;
+                        top: 55%;
                         left: 20%;
                     }
                 }
                 &.carpinteria-content {
                     top: 35%;
-                    left: 25%;
+                    left: 30%;
                     ${({ theme }) => theme.device.tablet} {
+                        left: 25%;
                         top: 40%;
                     }
                     ${({ theme }) => theme.device.desktop} {
-                        top: 30%;
+                        top: 32%;
+                        left: 29%;
                     }
                 }
             }

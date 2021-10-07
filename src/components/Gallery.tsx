@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyledGallery } from '../styles/Gallery';
 
-const createImg = (num: number) => ({
-    src: `images/gallery${num}.jpeg`,
+const createImg = (num: number, extension?: string) => ({
+    src: `images/gallery${num}${extension ? extension : '.jpeg'}`,
     alt: `Photo ${num}`,
     className: `photo${num}`
 });
@@ -15,10 +15,10 @@ const pictures = [
     createImg(5),
     createImg(6),
     createImg(7),
-    createImg(8),
-    createImg(9),
-    createImg(10),
-    createImg(11)
+    createImg(8, '.png'),
+    createImg(9, '.png'),
+    createImg(10, '.jpg'),
+    createImg(11, '.jpg')
 ];
 
 interface Props {
@@ -29,9 +29,17 @@ const Gallery: React.FC<Props> = (props) => {
     return (
         <StyledGallery {...props} className="section">
             <div className="gallery-wrapper">
-                {pictures.map((picture) => (
+                {pictures.map((picture, index) => (
                     <img
-                        key={picture.className}
+                        key={picture.className + index}
+                        className={`photo ${picture.className}`}
+                        src={picture.src}
+                        alt={picture.alt}
+                    />
+                ))}
+                {pictures.map((picture, index) => (
+                    <img
+                        key={picture.className + index}
                         className={`photo ${picture.className}`}
                         src={picture.src}
                         alt={picture.alt}

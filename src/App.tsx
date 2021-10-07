@@ -37,7 +37,7 @@ const App: React.FC = () => {
         const element = '#menu .list';
         const options = (section: string) => ({
             trigger: section,
-            start: 'top center-=200',
+            start: section === '#about' ? 'top bottom-=100' : 'top center-=200',
             end: 'bottom top',
             toggleActions: 'play none none reverse',
             toggleClass: {
@@ -71,7 +71,7 @@ const App: React.FC = () => {
                 <Logo blue={blueLogo} />
                 <Menu id="menu" ref={menuRef} />
                 <ArrowDown currentSection={currentSection} />
-                <Header />
+                <Header gsap={gsap} scrollTrigger={ScrollTrigger} />
                 <About gsap={gsap} scrollTrigger={ScrollTrigger} id="about" />
                 <Gallery id="gallery" />
                 <Project id="project" />

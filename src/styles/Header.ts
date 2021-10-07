@@ -8,6 +8,7 @@ export const StyledHeader = styled.header`
     padding: 10vh 0 0 0;
     box-sizing: border-box;
     background-color: ${({ theme }) => theme.color.green};
+    overflow: hidden;
     ${({ theme }) => theme.device.lgPhone} {
         flex-direction: row;
         justify-content: center;

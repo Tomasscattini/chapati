@@ -68,12 +68,15 @@ export const StyledContact = styled.footer`
     .photography-credits {
         position: absolute;
         z-index: 9999;
-        bottom: 5vh;
+        bottom: 7vh;
         width: 100%;
         text-align: center;
         color: white;
         line-height: 1.4;
         font-size: 0.8rem;
+        ${({ theme }) => theme.device.lgPhone} {
+            bottom: 5vh;
+        }
         ${({ theme }) => theme.device.tablet} {
             width: auto;
             left: 5vw;
