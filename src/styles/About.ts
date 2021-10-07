@@ -79,8 +79,13 @@ export const StyledAbout = styled.main`
         max-width: 80%;
         margin: 0 auto;
         padding-bottom: 15vh;
+        padding-top: 20vh;
+        ${({ theme }) => theme.device.tablet} {
+            padding-top: 5vh;
+        }
         ${({ theme }) => theme.device.laptop} {
             max-width: 900px;
+            padding-top: 0;
         }
         .paragraph {
             font-size: 1.8rem;

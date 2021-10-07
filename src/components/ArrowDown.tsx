@@ -10,13 +10,23 @@ const StyledArrow = styled.div`
     z-index: 99;
     bottom: 40px;
     right: 5vw;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.6);
     cursor: pointer;
     transition: all 0.3s ease;
+    a {
+        width: 60%;
+        img {
+            width: 100%;
+        }
+    }
+    ${({ theme }) => theme.device.tablet} {
+        width: 40px;
+        height: 40px;
+    }
     &.rotate {
         transform: rotate(-180deg);
         &:hover {

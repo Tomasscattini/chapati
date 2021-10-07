@@ -10,9 +10,15 @@ const StyledLogo = styled.div`
     z-index: 99;
     width: 100vw;
     height: 60px;
-    margin-top: 5vh;
+    margin-top: 3vh;
+    ${({ theme }) => theme.device.tablet} {
+        margin-top: 5vh;
+    }
     .brand {
-        width: 200px;
+        width: 150px;
+        ${({ theme }) => theme.device.tablet} {
+            width: 200px;
+        }
     }
 `;
 
