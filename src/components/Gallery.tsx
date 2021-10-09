@@ -1,5 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
+import ImagePopup from 'components/ImagePopup';
 import { StyledGallery } from '../styles/Gallery';
+
+export interface ImageType {
+    src: string;
+    alt: string;
+    className: string;
+}
 
 const createImg = (num: number, extension?: string) => ({
     src: `images/gallery${num}${extension ? extension : '.jpeg'}`,
@@ -7,7 +14,7 @@ const createImg = (num: number, extension?: string) => ({
     className: `photo${num}`
 });
 
-const pictures = [
+const pictures: ImageType[] = [
     createImg(1),
     createImg(2),
     createImg(3),
@@ -25,26 +32,26 @@ interface Props {
 }
 
 const Gallery: React.FC<Props> = (props) => {
+    const [openedImage, setOpenedImage] = useState<ImageType | null>(null);
+
+    const handleClose = () => {
+        setOpenedImage(null);
+    };
+
     return (
         <StyledGallery {...props} className="section">
             <div className="gallery-wrapper">
-                {pictures.map((picture, index) => (
+                {[...pictures, ...pictures].map((picture, index) => (
                     <img
                         key={picture.className + index}
-                        className={`photo ${picture.className}`}
-                        src={picture.src}
-                        alt={picture.alt}
-                    />
-                ))}
-                {pictures.map((picture, index) => (
-                    <img
-                        key={picture.className + index}
+                        onClick={() => setOpenedImage(picture)}
                         className={`photo ${picture.className}`}
                         src={picture.src}
                         alt={picture.alt}
                     />
                 ))}
             </div>
+            <ImagePopup image={openedImage} open={openedImage ? true : false} close={handleClose} />
         </StyledGallery>
     );
 };

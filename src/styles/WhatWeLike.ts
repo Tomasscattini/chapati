@@ -110,9 +110,10 @@ export const StyledWhatWeLike = styled.section`
                     top: 22%;
                 }
                 ${({ theme }) => theme.device.desktop} {
-                    font-size: 2.5rem;
+                    font-size: 2.3rem;
                     left: 28%;
                     top: 45%;
+                    line-height: 1.2;
                 }
                 &.huerta-content {
                     left: 28%;
@@ -130,7 +131,7 @@ export const StyledWhatWeLike = styled.section`
                         top: 38%;
                     }
                     ${({ theme }) => theme.device.desktop} {
-                        top: 55%;
+                        top: 57%;
                         left: 20%;
                     }
                 }
@@ -142,7 +143,7 @@ export const StyledWhatWeLike = styled.section`
                         top: 40%;
                     }
                     ${({ theme }) => theme.device.desktop} {
-                        top: 32%;
+                        top: 35%;
                         left: 29%;
                     }
                 }
