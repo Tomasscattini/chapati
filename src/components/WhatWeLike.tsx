@@ -22,21 +22,21 @@ const WhatWeLike: React.FC<Props> = (props) => {
                     onMouseLeave={() => handleShowIsland()}
                     className="list-item comunidad"
                 >
-                    Comunidad
+                    Comunidad <span className="arrow">{'>'}</span>
                 </li>
                 <li
                     onMouseEnter={() => handleShowIsland(2)}
                     onMouseLeave={() => handleShowIsland()}
                     className="list-item huerta"
                 >
-                    Huerta
+                    Huerta <span className="arrow">{'>'}</span>
                 </li>
                 <li
                     onMouseEnter={() => handleShowIsland(3)}
                     onMouseLeave={() => handleShowIsland()}
                     className="list-item carpinteria"
                 >
-                    Carpintería
+                    Carpintería <span className="arrow">{'>'}</span>
                 </li>
                 <div className={`details ${showIsland === 1 ? 'show' : ''}`}>
                     <img src="images/vectorb.svg" alt="Blue Island" />

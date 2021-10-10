@@ -17,6 +17,7 @@ export const StyledGallery = styled.section`
         .photo {
             margin: 0 15px;
             height: 100%;
+            cursor: pointer;
             transition: all 0.3s ease;
             &:hover {
                 transform: scale(1.05);

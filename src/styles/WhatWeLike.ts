@@ -32,6 +32,8 @@ export const StyledWhatWeLike = styled.section`
         margin: 65px 0;
         .list-item {
             position: relative;
+            display: flex;
+            align-items: center;
             list-style: none;
             width: 100%;
             font-size: 3rem;
@@ -41,6 +43,13 @@ export const StyledWhatWeLike = styled.section`
             border-bottom: 3px solid ${({ theme }) => theme.color.blue};
             z-index: 1;
             transition: color 0.3s ease;
+            .arrow {
+                font-size: 2rem;
+                margin-left: 20px;
+                ${({ theme }) => theme.device.tablet} {
+                    display: none;
+                }
+            }
             ${({ theme }) => theme.device.tablet} {
                 font-size: 6rem;
                 padding-left: 20vw;
@@ -52,6 +61,9 @@ export const StyledWhatWeLike = styled.section`
             &:hover {
                 z-index: 999;
                 border-color: transparent;
+                .arrow {
+                    display: none;
+                }
             }
             &.comunidad:hover {
                 color: ${({ theme }) => theme.color.pink};
