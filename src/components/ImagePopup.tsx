@@ -87,24 +87,24 @@ interface Props {
     id?: string;
     className?: string;
     image: ImageType | null;
-    open: boolean;
+    isOpen: boolean;
     close: () => void;
 }
 
-const ImagePopup: React.FC<Props> = ({ image, open, close, ...rest }) => {
-    const [closing, setClosing] = useState<boolean>(false);
+const ImagePopup: React.FC<Props> = ({ image, isOpen, close, ...rest }) => {
+    const [isClosing, setIsClosing] = useState<boolean>(false);
 
     const handleClose = () => {
-        setClosing(true);
+        setIsClosing(true);
         setTimeout(() => {
             close();
-            setClosing(false);
+            setIsClosing(false);
         }, 400);
     };
 
-    if (!open) return null;
+    if (!isOpen) return null;
     return (
-        <StyledImagePopup {...rest} className={closing ? 'closing' : ''}>
+        <StyledImagePopup {...rest} className={isClosing ? 'closing' : ''}>
             <div onClick={handleClose} className="close-btn">
                 <p>X</p>
             </div>

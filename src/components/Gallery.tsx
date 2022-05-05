@@ -51,7 +51,7 @@ const Gallery: React.FC<Props> = (props) => {
                     />
                 ))}
             </div>
-            <ImagePopup image={openedImage} open={openedImage ? true : false} close={handleClose} />
+            <ImagePopup image={openedImage} isOpen={openedImage ? true : false} close={handleClose} />
         </StyledGallery>
     );
 };
